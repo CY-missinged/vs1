@@ -1,0 +1,27 @@
+//费马小定理:若p为质数,a^(p-1)%p=1
+//a的乘法逆元为a^(p-2)
+
+(a+b)%p=(a%p+b%p)%p
+(a-b)%p=((a%p-b%p)+p)%p
+(a*b)%P=(a%p)*(b%p)%P//积的取余等于取余的积的取余
+//第三行与第9，10行公式结合，即快速幂取模
+除法取模用逆元
+a^b mod c = (a mod c)^b mod c
+
+·1·快速幂取模
+//pow(a,b)%c=(pow(a*a,b/2)%c)//b为偶数
+//pow(a,b)%c=((pow(a*a,b/2)*a)%c)//b为奇数
+
+int PowerMod(int a, int b, int c)
+{
+    int ans = 1;
+    a = a % c;
+    while(b>0)
+    {
+        if(b % 2 = = 1)
+        ans = (ans * a) % c;
+        b = b/2;
+        a = (a * a) % c;
+    }
+    return ans;
+}

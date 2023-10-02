@@ -1,0 +1,60 @@
+//2021.12.24//
+memset
+meset是初始化函数。
+作用为新申请的内存做初始化工作,将某一数组初始化为同一个数
+如果要把一个char a[20]清零
+memset(a,0,20*sizeof(char));
+        #include <stdio.h>
+        #include <string.h>
+        int main()
+        {
+            int i, j, t, n, T = 0;
+            char a[100], b[100], c[100], d[100];
+            gets(a);
+            memset(a,'1',100*sizeof(char)),
+            puts(a);
+            return 0;
+        }
+
+//2021.12.7//
+向上取整
+<math.h>
+double ceil（double x）；
+向下取整
+<math.h>
+double float（double x）；
+
+//2021.12.6//
+排序
+<stdlib.h>
+qsort（数组首地址（指针），元素个数，元素大小，比较函数compare）；
+compare（const void *a,const void *b）;函数名无所谓
+返回值<0，则p1被排在p2左边
+返回值=0，则p1与p2顺序不确定
+返回值>0，则p1被排在p2右面
+            一维数组
+            int a[1000];
+            qsort(a,1000,sizeof(int),comp);
+            int comp(const void*a,const void*b)
+            {
+            return *(int*)a-*(int*)b;                
+            }
+            二维数组4
+            1.
+            int a[1000][2]; （a[1]必须和a[0]一起移动交换）
+            qsort(a,1000,sizeof(int)*2,comp);
+            int comp(const void*a,const void*b)
+            {
+            return((int*)a)[0]-((int*)b)[0];
+            }
+            2.
+            字符串数组
+            qsort(a,strlen(a),sizeof(a[0]),Comp);
+            int Comp(const void*p1,const void*p2)
+            {
+            return strcmp((char*)p2,(char*)p1);
+            }
+            3.
+            
+            4.
+            

@@ -1,0 +1,37 @@
+// encoding=UTF-8
+switch ()
+{
+    csae 1 : ....;
+    break;
+case 2:
+    ....;
+    break;
+    ......;
+default:
+    ...;
+}
+动态存储分配与释放(链表)
+原型 void *malloc(unsigned int size);
+if (1):申请八个整型的内存空间
+    int *p;
+p = (int *)malloc(sizeof(int) * 8);
+若没有足够内存单元，返回值为NULL(即返回指针为0)
+p = NULL;
+if (2):申请十个双精度数空间
+    double *p;
+p = (double *)malloc(sizeof(double) * 10);
+或
+    p = (double *)malloc(8 * 10);
+if (3):申请一个结构体的空间
+    struct stu
+    {
+        int a;
+        char b[20];
+        struct stu *next;
+    } d;
+struct stu *p;
+p = (struct stu *)malloc(sizeof(struct stu));
+释放
+原型 void free(void *p)
+    p = (long *)malloc(18);
+free(p);
