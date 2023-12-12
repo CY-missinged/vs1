@@ -10,7 +10,8 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "windowsSdkVersion": "10.0.19041.0"
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "D:/Dev-C++/Dev-Cpp/MinGW64/bin/gcc.exe"
         }
     ],
     "version": 4

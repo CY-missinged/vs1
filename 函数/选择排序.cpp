@@ -1,6 +1,6 @@
 #include<stdio.h>
 #define N 10
-void bdd_sxpx_sx(int x[],int y);
+void xuan_ze(int x[],int y);
 int main()
 {
     int a[N],i,j;
@@ -8,14 +8,14 @@ int main()
     {
         scanf("%d",&a[i]);
     }
-    bdd_sxpx_sx(a,N);
+    xuan_ze(a,N);
     for(i=0;i<N;i++)
     {
         printf("%d ",a[i]);
     }
     return 0;
 }
-void bdd_sxpx_sx(int x[],int y)
+void xuan_ze(int x[],int y)
 {
     int i,j,k,t;
     for(i=0;i<y-1;i++)

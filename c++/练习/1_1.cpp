@@ -1,26 +1,34 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
 class Point
 {
-    private:    //私有
-        //数据成员
-        double x,y;
-    public:     //共有
-        //函数数据
-        double juli();
-};
+private:
+    char name[10];
 
-double Point::juli()
-{
-    //函数体
-}
+public:
+    Point(int a)
+    {
+        x = a;
+        y = a+1;
+    }
+    ~Point()
+    {
+        cout<<name;
+    }
+    void juli()
+    {
+        cout << x << endl;
+        cout << (y = x) << endl;
+    }
+};
 
 int main()
 {
-    Point p1, p2;
-    int i(4);
-    p1.juli();
+    Point p1(7);
+    Point p2(p1);
+    // Point p2;
+    p2.juli();
     return 0;
 }

@@ -1,0 +1,82 @@
+// // 电话信息
+// class Data_people
+// {
+// public:
+//     static int total;
+//     Data_people() : sex(0), age(0)
+//     {
+//         memset(name, 0, 20 * sizeof(name[0]));
+//         memset(num, 0, 30 * sizeof(num[0]));
+//         memset(address, 0, 30 * sizeof(address[0]));
+//     }
+//     char *Get_num() { return num; }
+
+// private:
+//     int sex, age;
+//     char name[20], num[30], address[30];
+// };
+
+// ifstream out2("People.txt");
+// if (out2)
+// {
+//     for (i = 1; i <= user_Manager.Get_total(); i++)
+//     {
+//         out2 >> people_a[i];
+//         out2 >> people_p[i];
+//     }
+//     out2.close();
+// }
+// else
+// {
+//     cout << "资源文件2位置错误！" << endl;
+// }
+
+void cout_m()
+{
+    cout << m_people_total << "\t" << password << endl;
+    for (int i = 1; i <= m_people_total; i++)
+    {
+        cout << m_people_a[i] << "\t" << m_people_p[i] << endl;
+    }
+}
+
+    // //登录管理员系统
+    // if (user_Manager.logon() == 1)
+    //     cout << "ok";
+    // else
+    //     cout << "error";
+
+    // 登录用户账号
+    People user_people;
+    if (user_people.logon(&user_Manager) == 1)
+        cout << "ok";
+    else
+        cout << "error";
+
+//读取文件
+{
+    // char num2[20], people_a[20], people_p[20];
+    // ifstream out1("Manager.txt"); // 读取管理员密码及用户账号密码数量
+    // if (out1)
+    // {
+    //     out1 >> num1;
+    //     user_Manager.Write_total(num1);
+    //     out1 >> num2;
+    //     user_Manager.Write_password(num2);
+    //     for (i = 1; i <= user_Manager.Get_total(); i++)
+    //     {
+    //         out1 >> people_a;
+    //         user_Manager.Write_account(people_a, i);
+    //         out1 >> people_p;
+    //         user_Manager.Write_password(people_p, i);
+    //     }
+    //     out1.close();
+    // }
+    // else
+    // {
+    //     cout << "资源文件位置错误！" << endl;
+    //     cout << "资源文件位置错误！" << endl;
+    //     cout << "资源文件位置错误！" << endl;
+    //     cout << endl;
+    // }
+}

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="modal fade" id="displayApplyAndAwardsModal" tabindex="1"
+            role="dialog"
+            aria-labelledby="displayApplyAndAwardsModalLabel"
+            data-backdrop="static">
+            <div class="modal-dialog" style="width: 1000px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×</button>
+                        <h4 class="modal-title"
+                            id="displayApplyAndAwardsModalLabel">奖项查看</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="bk-form" style="padding: 10px">
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">奖项名称：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p id="display_edit_display_award_name"
+                                            class="p_class"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">评奖条件：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_requirement"
+                                            style="word-break: break-word"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">奖项级别：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_award_level"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">所属组织：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_belonging_org"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">开始时间：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_start_datetime"
+                                            name="display_start_datetime"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">结束时间：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_end_datetime"
+                                            name="edit_display_end_datetime"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">是否需要附件：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_need_attachment"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">奖项状态：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_status"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <form id="validate_form">
+                                <input type="hidden" id="award_id"
+                                    class="bk-form-input">
+                                <input type="hidden" id="apply_id"
+                                    class="bk-form-input">
+                                <div class="bk-form"
+                                    style="padding: 10px 28px 10px 0"
+                                    id="validate_form">
+                                    <div class="bk-form-item">
+                                        <label class="bk-label"
+                                            style="width:150px;">申报人/团队</label>
+                                        <div class="bk-form-content"
+                                            style="margin-left:150px;">
+                                            <p class="p_class"
+                                                id="display_edit_applicant_info"></p>
+                                        </div>
+                                    </div>
+                                    <div class="bk-form-item">
+                                        <label class="bk-label"
+                                            style="width:150px;">事迹介绍</label>
+                                        <div class="bk-form-content"
+                                            style="margin-left:150px;">
+                                            <p class="p_class"
+                                                id="display_edit_introduction"
+                                                style="word-break: break-word"></p>
+                                        </div>
+                                    </div>
+                                    <div class="bk-form-item">
+                                        <label class="bk-label"
+                                            style="width:150px;">附件</label>
+                                        <div class="bk-form-content"
+                                            style="margin-left:150px;">
+                                            <a href target="_blank"
+                                                id="display_edit_attachment_url"><span
+                                                    class="bk-tag is-fill bk-primary">点击查看附件</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="bk-form-item is-required">
+                                        <label class="bk-label"
+                                            style="width:150px;">评奖</label>
+                                        <div class="bk-form-content"
+                                            style="margin-left:150px;">
+                                            <label class="bk-form-radio">
+                                                <input type="radio"
+                                                    name="radio1"
+                                                    checked="checked" value=5>
+                                                <i class="bk-radio-text">获奖</i>
+                                            </label>
+                                            <label class="bk-form-radio">
+                                                <input type="radio"
+                                                    name="radio1" value=4>
+                                                <i class="bk-radio-text">未获奖</i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="bk-form-item is-required">
+                                        <label class="bk-label"
+                                            style="width:150px;">评语</label>
+                                        <div class="bk-form-content"
+                                            style="margin-left:150px;">
+                                            <textarea class="bk-form-textarea"
+                                                id="comment"
+                                                name="comment"
+                                                placeholder="请输入评语"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <a class="bk-button bk-primary" id="submit" title="保存"
+                            onclick="save()">
+                            <span>保存</span>
+                        </a>
+                        <button type="button" class="bk-button bk-default"
+                            data-dismiss="modal">关闭</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="displayApplyAndAwardsModal" tabindex="1"
+            role="dialog"
+            aria-labelledby="displayApplyAndAwardsModalLabel"
+            data-backdrop="static">
+            <div class="modal-dialog" style="width: 1000px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×</button>
+                        <h4 class="modal-title"
+                            id="displayApplyAndAwardsModalLabel">奖项查看</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="bk-form" style="padding: 10px">
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">奖项名称：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p id="display_edit_display_award_name"
+                                            class="p_class"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">评奖条件：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_requirement"
+                                            style="word-break: break-word"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">奖项级别：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_award_level"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">所属组织：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_belonging_org"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">开始时间：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_start_datetime"
+                                            name="display_start_datetime"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">结束时间：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_end_datetime"
+                                            name="edit_display_end_datetime"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">是否需要附件：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_need_attachment"></p>
+                                    </div>
+                                </div>
+                                <div class="bk-form-item">
+                                    <label class="bk-label" style="width:150px;">奖项状态：</label>
+                                    <div class="bk-form-content"
+                                        style="margin-left:150px;">
+                                        <p class="p_class"
+                                            id="display_edit_display_status"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <form id="validate_form">
+                                <input type="hidden" id="award_id"
+                                    class="bk-form-input">
+                                <input type="hidden" id="apply_id"
+                                    class="bk-form-input">
+                                <div class="bk-form"
+                                    style="padding: 10px 28px 10px 0"
+                                    id="validate_form">
+                                    <div class="bk-form-item">
+                                        <label class="bk-label"
+                                            style="width:150px;">申报人/团队</label>
+                                        <div class="bk-form-content"
+                                            style="margin-left:150px;">
+                                            <p class="p_class"
+                                                id="display_edit_applicant_info"></p>
+                                        </div>
+                                    </div>
+                                    <div class="bk-form-item">
+                                        <label class="bk-label"
+                                            style="width:150px;">事迹介绍</label>
+                                        <div class="bk-form-content"
+                                            style="margin-left:150px;">
+                                            <p class="p_class"
+                                                id="display_edit_introduction"
+                                                style="word-break: break-word"></p>
+                                        </div>
+                                    </div>
+                                    <div class="bk-form-item">
+                                        <label class="bk-label"
+                                            style="width:150px;">附件</label>
+                                        <div class="bk-form-content"
+                                            style="margin-left:150px;">
+                                            <a href target="_blank"
+                                                id="display_edit_attachment_url"><span
+                                                    class="bk-tag is-fill bk-primary">点击查看附件</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="bk-form-item is-required">
+                                        <label class="bk-label"
+                                            style="width:150px;">评奖</label>
+                                        <div class="bk-form-content"
+                                            style="margin-left:150px;">
+                                            <label class="bk-form-radio">
+                                                <input type="radio"
+                                                    name="radio1"
+                                                    checked="checked" value=5>
+                                                <i class="bk-radio-text">获奖</i>
+                                            </label>
+                                            <label class="bk-form-radio">
+                                                <input type="radio"
+                                                    name="radio1" value=4>
+                                                <i class="bk-radio-text">未获奖</i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="bk-form-item is-required">
+                                        <label class="bk-label"
+                                            style="width:150px;">评语</label>
+                                        <div class="bk-form-content"
+                                            style="margin-left:150px;">
+                                            <textarea class="bk-form-textarea"
+                                                id="comment"
+                                                name="comment"
+                                                placeholder="请输入评语"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <a class="bk-button bk-primary" id="submit" title="保存"
+                            onclick="save()">
+                            <span>保存</span>
+                        </a>
+                        <button type="button" class="bk-button bk-default"
+                            data-dismiss="modal">关闭</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+    </body>
+</html>

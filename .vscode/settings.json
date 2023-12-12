@@ -1,4 +1,3 @@
 {
-  "C_Cpp.errorSquiggles": "Disabled",
-  "files.encoding": "gbk"
+	"C_Cpp.errorSquiggles": "disabled"
 }

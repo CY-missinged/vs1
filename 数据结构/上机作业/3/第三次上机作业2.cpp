@@ -24,7 +24,7 @@ LNode *InitLink()
     return head;
 }
 
-LNode *creatlink() //尾插法
+LNode *Creatlink() //尾插法
 {
     LNode *head, *p;
     DataType x;
@@ -35,7 +35,7 @@ LNode *creatlink() //尾插法
     scanf("%d", &uesr_num);
     for (i = 0; i < uesr_num; i++)
     {
-        printf("请输入第%d个信息：\n", i + 1);
+        printf("请输入第%d个数据：\n", i + 1);
         scanf("%d", &x.num);
         p->next = (LNode *)malloc(sizeof(LNode));
         p = p->next;
@@ -96,9 +96,9 @@ int main()
 {
     LNode *head1, *head2, *p;
     printf("请输入第一个链表\n");
-    head1 = creatlink();
+    head1 = Creatlink();
     printf("请输入第二个链表\n");
-    head2 = creatlink();
+    head2 = Creatlink();
     p = paixu_link(head1, head2);
     InputList(p);
     return 0;

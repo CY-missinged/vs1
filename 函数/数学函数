@@ -1,3 +1,6 @@
+//encoding=utf-8
+
+
 //2021.12.24//
 memset
 meset是初始化函数。
@@ -32,29 +35,53 @@ compare（const void *a,const void *b）;函数名无所谓
 返回值<0，则p1被排在p2左边
 返回值=0，则p1与p2顺序不确定
 返回值>0，则p1被排在p2右面
-            一维数组
+
+            // 一维数组
             int a[1000];
             qsort(a,1000,sizeof(int),comp);
             int comp(const void*a,const void*b)
             {
-            return *(int*)a-*(int*)b;                
+            return *(int*)a-*(int*)b;
             }
-            二维数组4
-            1.
+
+            // 二维数组
             int a[1000][2]; （a[1]必须和a[0]一起移动交换）
             qsort(a,1000,sizeof(int)*2,comp);
             int comp(const void*a,const void*b)
             {
             return((int*)a)[0]-((int*)b)[0];
             }
-            2.
-            字符串数组
+
+            // 字符串数组
             qsort(a,strlen(a),sizeof(a[0]),Comp);
             int Comp(const void*p1,const void*p2)
             {
             return strcmp((char*)p2,(char*)p1);
             }
-            3.
-            
-            4.
-            
+
+            // 按结构体中某个关键字排序（对结构体一级排序）：
+            struct Node
+            {
+            double data;
+            int other;
+            }s[100];
+            int Comp(const void*p1,const void*p2)
+            {
+            return (*(Node*)p2).data>(*（Node*）p1).data?1:-1;
+            }
+            qsort(s,100,sizeof(s[0]),Comp);
+
+            // 按结构体中多个关键字排序（对结构体多级排序）[以二级为例]：
+            struct Node
+            {
+            int x;
+            int y;
+            }s[100];
+            //按照x从小到大排序，当x相等时按y从大到小排序
+            int Comp(const void*p1,const void*p2)
+            {
+            struct Node*c=(Node*)p1;
+            struct Node*d=(Node*)p2;
+            if(c->x!=d->x)returnc->x-d->x;
+            else return d->y-c->y;
+            }
