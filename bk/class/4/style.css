@@ -1,0 +1,15 @@
+my1{
+    width: 40px;
+    height: 20px;
+    background-color: aqua;
+}
+.my2{
+    width: 40px;
+    height: 20px;
+    background-color: rebeccapurple;
+}
+#my3{
+    width: auto;
+    height: auto;
+    background-color: green;
+}
